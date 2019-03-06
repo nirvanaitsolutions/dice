@@ -1,0 +1,9 @@
+<template>
+  <require from="./components/app-menu.html"></require>
+
+  <main>
+    <app-menu router.bind="router" role="complementary"></app-menu>
+
+    <router-view swap-order="after" class="page"></router-view>
+  </main>
+</template>

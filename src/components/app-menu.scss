@@ -1,0 +1,17 @@
+app-menu {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 270px;
+  max-width: 28%;
+  border-right: 1px solid #FFF;
+  border-left: 0;
+  order: -1;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  flex: 1;
+  box-shadow: none;
+  z-index: 0;
+}
