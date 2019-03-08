@@ -45,7 +45,13 @@ body {
   text-size-adjust: none
 }
 
-main {
+.heading {
+    font-size: 21px;
+    font-weight: normal;
+    margin: 0;
+}
+
+#main {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -75,7 +81,6 @@ main {
     display: flex;
     position: absolute;
     flex-direction: column;
-    justify-content: space-between;
     contain: layout size style;
     overflow: hidden;
     z-index: 101;
@@ -84,9 +89,13 @@ main {
 .page-header {
     background: #051F40;
     display: block;
+    padding: 15px;
+    order: -1;
+    z-index: 10;
 }
 
 .bet-div {
+    background: #063464;
     padding: 16px;
 }
 
@@ -109,4 +118,36 @@ main {
     margin-top: 10px;
     padding-bottom: 0px;
     position: relative;
+}
+
+.below-input-div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -1rem;
+}
+
+    .below-input-div > button {
+        appearance: none;
+        background: none;
+        border: none;
+        color: #398adf;
+        cursor: pointer;
+        height: 40px;
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
+
+md-input .input-field input[type="number"] {
+    border: 1px solid #3C90E7;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #FFF;
+    padding: 0 10px;
+
+    &:focus:not([readonly]) {
+        border: 1px solid #3C90E7;
+        box-shadow: none;
+    }
 }

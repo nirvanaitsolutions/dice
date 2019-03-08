@@ -1,7 +1,7 @@
 <template>
     <div class="page__content">
         <header class="page-header">
-            <h1>Dice</h1>
+            <h1 class="heading">Dice</h1>
         </header>
 
         <div class="bet-div">
@@ -11,8 +11,20 @@
             </div>
 
             <div class="text-box-wrapper">
-                <text-input></text-input>
+                <md-input type="number" value.bind="minimumBet"></md-input>
+
+                <div class="below-input-div">
+                    <button type="button">1/2</button>
+                    <button type="button">2X</button>
+                    <button type="button">MAX</button>
+                </div>
             </div>
+
+            <div class="text-box-wrapper">
+
+            </div>
+
+            <md-range value.bind="sliderValue" md-min.bind="sliderMinValue" md-max.bind="sliderMaxValue" md-step="1"></md-range>
         </div>
     </div>
 </template>
