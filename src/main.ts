@@ -5,10 +5,9 @@ import './styles/dice.scss';
 import {Aurelia} from 'aurelia-framework'
 import environment from './environment';
 import {PLATFORM} from 'aurelia-pal';
-import * as Bluebird from 'bluebird';
 
-// remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
-Bluebird.config({ warnings: { wForgottenReturn: false } });
+import 'materialize-css';
+import 'materialize-css/dist/css/materialize.css';
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
@@ -16,6 +15,7 @@ export function configure(aurelia: Aurelia) {
     .feature(PLATFORM.moduleName('resources/index'));
 
   aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
+  aurelia.use.plugin(PLATFORM.moduleName('aurelia-materialize-bridge'), b => b.useAll());
 
   if (environment.debug) {
     aurelia.use.developmentLogging();

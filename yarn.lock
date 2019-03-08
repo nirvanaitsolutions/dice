@@ -254,10 +254,10 @@
   resolved "https://registry.yarnpkg.com/@types/anymatch/-/anymatch-1.3.1.tgz#336badc1beecb9dacc38bea2cf32adf627a8421a"
   integrity sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==
 
-"@types/bluebird@^3.5.24":
-  version "3.5.26"
-  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.26.tgz#a38c438ae84fa02431d6892edf86e46edcbca291"
-  integrity sha512-aj2mrBLn5ky0GmAg6IPXrQjnN0iB/ulozuJ+oZdrHRAzRbXjGmu4UXsNCjFvPbSaaPZmniocdOzsM392qLOlmQ==
+"@types/cash@*":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@types/cash/-/cash-0.0.3.tgz#770d6382c605bb4f8572f17cea6f40cec5832496"
+  integrity sha512-gS24kdFuVwfo5h7IlStnXyBSIH4e9aFIhNHb4w+o5DwbYDeQJv+i9heh7u7nSvqnOP3v34tQMTe7VoJp2US08w==
 
 "@types/debug@^0.0.29":
   version "0.0.29"
@@ -269,10 +269,25 @@
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.14.tgz#37daaf78069e7948520474c87b80092ea912520a"
   integrity sha512-Q5hTcfdudEL2yOmluA1zaSyPbzWPmJ3XfSWeP3RyoYvS9hnje1ZyagrZOuQ6+1nQC1Gw+7gap3pLNL3xL6UBug==
 
+"@types/jquery@*":
+  version "3.3.29"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.29.tgz#680a2219ce3c9250483722fccf5570d1e2d08abd"
+  integrity sha512-FhJvBninYD36v3k6c+bVk1DSZwh7B5Dpb/Pyk3HKVsiohn0nhbefZZ+3JXbWQhFyt0MxSl2jRDdGQPHeOHFXrQ==
+  dependencies:
+    "@types/sizzle" "*"
+
 "@types/lodash@^4.14.117":
   version "4.14.122"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.122.tgz#3e31394c38cf1e5949fb54c1192cbc406f152c6c"
   integrity sha512-9IdED8wU93ty8gP06ninox+42SBSJHp2IAamsSYMUY76mshRTeUsid/gtbl8ovnOwy8im41ib4cxTiIYMXGKew==
+
+"@types/materialize-css@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@types/materialize-css/-/materialize-css-1.0.6.tgz#94ba0261b4d581f444dd5d543d5d73926ba3c5c7"
+  integrity sha512-H/QXdgih11880Rx+yhLU5mDCm3SVGF7CYyQjEmRYGrn/fGrPc+s2SQBwbB9gZCw2a/39bDkH/v+wyysj0nWXCQ==
+  dependencies:
+    "@types/cash" "*"
+    "@types/jquery" "*"
 
 "@types/node@*":
   version "11.10.4"
@@ -283,6 +298,11 @@
   version "10.12.29"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.29.tgz#c2c8d2d27bb55649fbafe8ea1731658421f38acf"
   integrity sha512-J/tnbnj8HcsBgCe2apZbdUpQ7hs4d7oZNTYA5bekWdP0sr2NGsOpI/HRdDroEi209tEvTcTtxhD0FfED3DhEcw==
+
+"@types/sizzle@*":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/sizzle/-/sizzle-2.3.2.tgz#a811b8c18e2babab7d542b3365887ae2e4d9de47"
+  integrity sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
 
 "@types/tapable@*":
   version "1.0.4"
@@ -875,7 +895,7 @@ aurelia-animator-css@^1.0.4:
     aurelia-pal "^1.0.0"
     aurelia-templating "^1.0.0"
 
-aurelia-binding@^2.0.0:
+aurelia-binding@^2.0.0, aurelia-binding@^2.1.5:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/aurelia-binding/-/aurelia-binding-2.2.0.tgz#9a6f3990fe854a040a6da1ef469f830d2b31b9a2"
   integrity sha512-bZ2DZ4fsQMTa+q54q+rU6o4xvfsC+RiCkjiwtRDU+DFsQOKPHOUqS9RhFgimSKzELpHzj+bxTxoXjImoowzR0Q==
@@ -940,7 +960,7 @@ aurelia-cli@^1.0.0-beta.13:
     terser "^3.16.1"
     typescript "^1.0.0 || ^2.0.0 || ^3.0.0"
 
-aurelia-dependency-injection@^1.0.0, aurelia-dependency-injection@^1.4.2:
+aurelia-dependency-injection@^1.0.0, aurelia-dependency-injection@^1.4.1, aurelia-dependency-injection@^1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/aurelia-dependency-injection/-/aurelia-dependency-injection-1.4.2.tgz#fa9d1a9f4931e353fb8f938ee0c54b9fbf3f341a"
   integrity sha512-NddvPLnKx6VQA70BXa1sfaLeEqwBfNrMaTYdHSS9kKD20lBwsXHWBZtRQPgRg9LF8g4yFKjxEgRA9Ja6SFregA==
@@ -1032,12 +1052,17 @@ aurelia-logging-console@^1.0.0:
   resolved "https://registry.yarnpkg.com/aurelia-logging-console/-/aurelia-logging-console-1.1.0.tgz#d43507ef14642ae8294bddd30b4b1c9f5e4bb677"
   integrity sha512-gv6Wf+xkHzv6izP6V9HquFUf0WNMUfhO6i5JkcZEBkSC2Jc3JM5Fkr0OPUwPu2M0FIG/90a5PNuEpvjjJamQ6Q==
 
-aurelia-logging@^1.0.0, aurelia-logging@^1.5.1:
+aurelia-logging@^1.0.0, aurelia-logging@^1.5.0, aurelia-logging@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/aurelia-logging/-/aurelia-logging-1.5.1.tgz#d9f2f3da8c10bc9385578c86ee49829d75c603c0"
   integrity sha512-HRycP+LrzAOsKN4bOQftP9aVztvVhsuvVZqHV9uuunK9peQCx38sTnC1mdC/qxoF+qFa7xVSVJh1xg8Whj1jrg==
 
-aurelia-metadata@^1.0.0, aurelia-metadata@^1.0.2:
+aurelia-materialize-bridge@^1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/aurelia-materialize-bridge/-/aurelia-materialize-bridge-1.2.8.tgz#c5ef991be3761d7377ff6f534e81533856afeffe"
+  integrity sha512-TasL/mi1wRYnY+sMNIWCkZ/rVaHUpA+l6dH25tM5Epc/xfAJK79nYh6jEOJ+JZ6ih+OpuIDWH5FJcCubG2RgVA==
+
+aurelia-metadata@^1.0.0, aurelia-metadata@^1.0.2, aurelia-metadata@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/aurelia-metadata/-/aurelia-metadata-1.0.5.tgz#76a7e0f3f7aaec25627b2abd55678627556e59f0"
   integrity sha512-7/xrjDXSSiPlwcw8CDh4GvtvKldfyl4IGUl9uIPhHLaAtC/i3ctBdSYIaosATY/3L/Yurc8zH1aJEhF01shL9w==
@@ -1059,7 +1084,7 @@ aurelia-pal-nodejs@^1.1.1:
     aurelia-pal "^1.1.0"
     jsdom "~11.5.1"
 
-aurelia-pal@^1.0.0, aurelia-pal@^1.1.0, aurelia-pal@^1.1.1, aurelia-pal@^1.3.0, aurelia-pal@^1.4.0:
+aurelia-pal@^1.0.0, aurelia-pal@^1.1.0, aurelia-pal@^1.1.1, aurelia-pal@^1.3.0, aurelia-pal@^1.4.0, aurelia-pal@^1.7.0, aurelia-pal@^1.8.0:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/aurelia-pal/-/aurelia-pal-1.8.1.tgz#a7e9eceda17e546960f0a0bfc236a53d0f214fbd"
   integrity sha512-8QwwS/gHdxRh0+a6pKnyVA1/xHcZV1P1nH7Vai3k+HjVLwj1cnsF/TCDx9SGedhEQxDzIryL41k6OcjwZR94Ig==
@@ -1095,7 +1120,7 @@ aurelia-router@^1.5.0:
     aurelia-path "^1.0.0"
     aurelia-route-recognizer "^1.2.0"
 
-aurelia-task-queue@^1.0.0, aurelia-task-queue@^1.1.0:
+aurelia-task-queue@^1.0.0, aurelia-task-queue@^1.1.0, aurelia-task-queue@^1.3.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/aurelia-task-queue/-/aurelia-task-queue-1.3.2.tgz#afabb7e0c49734b368f36c5bbf2c275bebd4da5d"
   integrity sha512-4a3TLUP6rN2RG9bW9g2yM6G4cE70sWXqAV1OAoYDgv9QHmlXFP8V/DEJxVjdcmEQwmtenRN+uQA0AkDORpgHUg==
@@ -1140,7 +1165,7 @@ aurelia-templating-router@^1.0.0:
     aurelia-router "^1.5.0"
     aurelia-templating "^1.8.1"
 
-aurelia-templating@^1.0.0, aurelia-templating@^1.3.0, aurelia-templating@^1.8.1:
+aurelia-templating@^1.0.0, aurelia-templating@^1.3.0, aurelia-templating@^1.8.0, aurelia-templating@^1.8.1, aurelia-templating@^1.9.0:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/aurelia-templating/-/aurelia-templating-1.10.1.tgz#1f0c0576c4d03b9a17397b59c399d36ef0374f48"
   integrity sha512-GDClZWk+32SUYMsEttRFE3+dIbzZeDf5vl9dvuO6ULe+erTUOq2TUf9pHknWZuzoXXdGSD2qQnk+AEZZWW3MOQ==
@@ -1172,6 +1197,30 @@ aurelia-tools@^2.0.0:
   dependencies:
     breeze-dag "^0.1.0"
     through2 "^2.0.0"
+
+aurelia-typed-observable-plugin@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/aurelia-typed-observable-plugin/-/aurelia-typed-observable-plugin-0.4.2.tgz#97c7617310aaedbff29ed88b44eb0832a9155c90"
+  integrity sha512-8O+7lFYs8X5VGwq/7FttrMHRcn5HvJX4QY+oHTvbBhAQU+umjGHaT/kOA8aycEE/KMplnzDDcj4hqW+EwKg7sw==
+  dependencies:
+    aurelia-binding "^2.0.0"
+    aurelia-logging "^1.5.0"
+    aurelia-metadata "^1.0.4"
+    aurelia-pal "^1.7.0"
+    aurelia-task-queue "^1.3.1"
+    aurelia-templating "^1.8.0"
+
+aurelia-validation@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/aurelia-validation/-/aurelia-validation-1.3.3.tgz#a8e6f84e58c70a5f7ccdb0203bcc26c4da325c30"
+  integrity sha512-oTZTQgVe6mv5LVVZ9C7C+EWIU4MyubxsuvaFFbX71PSMVxAx9YBCWI9iAO8BtGAZ8u0mJXJrgAE17YkLVn6x4g==
+  dependencies:
+    aurelia-binding "^2.1.5"
+    aurelia-dependency-injection "^1.4.1"
+    aurelia-logging "^1.5.0"
+    aurelia-pal "^1.8.0"
+    aurelia-task-queue "^1.3.1"
+    aurelia-templating "^1.9.0"
 
 aurelia-webpack-plugin@^3.0.0:
   version "3.0.0"
@@ -1436,7 +1485,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@^3.5.1, bluebird@^3.5.2, bluebird@^3.5.3:
+bluebird@^3.5.1, bluebird@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.3.tgz#7d01c6f9616c9a51ab0f8c549a79dfe6ec33efa7"
   integrity sha512-/qKPUQlaW1OyR51WeCPBvRnAlnZFUJkCSG5HzGnuIqhgyJtF+T94lFnn33eiazjRm2LAHVy2guNnaq48X9SJuw==
@@ -5225,6 +5274,11 @@ matchdep@^2.0.0:
     resolve "^1.4.0"
     stack-trace "0.0.10"
 
+materialize-css@^1.0.0-rc.2:
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/materialize-css/-/materialize-css-1.0.0-rc.2.tgz#b9e6b18f698c6ef77bb6b628d59147faf131eff5"
+  integrity sha512-FuQmSyq4Qv0ov7A2qXw0E6/jbQzSWx2P1pg2/XQDYTkkSc/GyiFAxu3fw9zgShwuTvyumEiw5jkxQWT9siqMBQ==
+
 math-random@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/math-random/-/math-random-1.0.4.tgz#5dd6943c938548267016d4e34f057583080c514c"
@@ -7846,7 +7900,7 @@ ts-node@^7.0.1:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tslib@^1.9.0:
+tslib@^1.9.0, tslib@^1.9.3:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha512-4krF8scpejhaOgqzBEcGM7yDIEfi0/8+8zDRZhNZZ2kjmHJ4hv3zCbQWxoJGz1iw5U0Jl0nma13xzHXcncMavQ==
