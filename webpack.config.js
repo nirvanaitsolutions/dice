@@ -20,9 +20,43 @@ const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const baseUrl = '/';
 
-const cssRules = [
-  { loader: 'css-loader' },
-];
+const load = {
+    style: { loader: 'style-loader' },
+    css: { loader: 'css-loader' },
+    cssModules: {
+      loader: 'css-loader',
+      options: {
+        modules: true,
+        localIdentName: '[name]__[local]____[hash:base64:5]'
+      }
+    },
+    postCss: {
+      loader: 'postcss-loader',
+      options: { plugins: loadPostCssPlugins }
+    }
+  };
+
+function loadPostCssPlugins() {
+    return [
+      require('postcss-normalize')(),
+      require('postcss-import')({
+        path: ['src/components/', 'styles/']
+      }),
+      require('postcss-global-import'),
+      require('precss')(),
+      require('postcss-nested')(),
+      require('postcss-advanced-variables')(),
+      require('postcss-custom-properties')(),
+      require('postcss-color-mod-function')(),
+      require('postcss-assets'),
+      require('postcss-hexrgba')(),
+      require('postcss-partial-import')(),
+      require('postcss-extend')(),
+      require('postcss-preset-env')({ browsers: ['last 2 versions'] }),
+      require('lost'),
+      require('autoprefixer')({ browsers: ['last 2 versions'] })
+    ];
+  }
 
 module.exports = ({ production, server, extractCss, coverage, analyze, karma } = {}) => ({
   resolve: {
@@ -147,30 +181,20 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
   devtool: production ? 'nosources-source-map' : 'cheap-module-eval-source-map',
   module: {
     rules: [
-      {
-        test: /\.css$/i,
-        issuer: [{ not: [{ test: /\.html$/i }] }],
-        use: extractCss ? [{
-          loader: MiniCssExtractPlugin.loader
+        {
+            test: /\.css$/i,
+            issuer: [{ not: [{ test: /\.html$/i }] }],
+            use: [
+                production ? MiniCssExtractPlugin.loader : load.style,
+                load.cssModules,
+                load.postCss
+            ]
         },
-          'css-loader'
-        ] : ['style-loader', ...cssRules]
-      },
-      {
-        test: /\.css$/i,
-        issuer: [{ test: /\.html$/i }],
-        use: cssRules
-      },
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-        issuer: /\.[tj]s$/i
-      },
-      {
-        test: /\.scss$/,
-        use: ['css-loader', 'sass-loader'],
-        issuer: /\.html?$/i
-      },
+        {
+            test: /\.css$/i,
+            issuer: [{ test: /\.html$/i }],
+            use: [load.css, load.postCss]
+        },
       { test: /\.html$/i, loader: 'html-loader' },
       { test: /\.ts$/, loader: "ts-loader" },
       { test: /\.(png|gif|jpg|cur)$/i, loader: 'url-loader', options: { limit: 8192 } },
@@ -187,10 +211,13 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
   },
   plugins: [
     ...when(!karma, new DuplicatePackageCheckerPlugin()),
-    new AureliaPlugin(),
-    new ProvidePlugin({
-      
-  }),
+    new AureliaPlugin({
+        features: {
+          ie: false,
+          svg: false
+        }
+    }),
+    new ProvidePlugin({}),
     new ModuleDependenciesPlugin({
       'aurelia-testing': ['./compile-spy', './view-spy']
     }),
