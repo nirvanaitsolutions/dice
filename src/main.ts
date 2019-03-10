@@ -1,6 +1,6 @@
 /// <reference types="aurelia-loader-webpack/src/webpack-hot-interface"/>
 
-import './styles/dice.scss';
+import './styles/dice.css';
 
 import {Aurelia} from 'aurelia-framework'
 import environment from './environment';
