@@ -1,14 +1,6 @@
 import { customElement } from 'aurelia-framework';
 import steem from 'steem';
 
-declare const steem_keychain: any;
-
-declare global {
-    interface Window {
-        steem_keychain: any;
-    }
-}
-
 @customElement('status')
 export class Status {
     login(username) {
