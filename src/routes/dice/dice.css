@@ -1,0 +1,42 @@
+.bet-div {
+    padding: 16px;
+}
+
+.bet-amount-how-to-play {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bet-amount-span {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #b0d4e9;
+}
+
+.text-box-wrapper {
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    padding-bottom: 0px;
+    position: relative;
+}
+
+.below-input-div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -1rem;
+}
+
+    .below-input-div > button {
+        appearance: none;
+        background: none;
+        border: none;
+        color: #398adf;
+        cursor: pointer;
+        height: 40px;
+        font-size: 12px;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+    }
