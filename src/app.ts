@@ -10,7 +10,7 @@ export class App {
     config.map([
 
       { route: [''], name: 'home', title: 'Home', redirect: 'dice' },
-      { route: 'dice', name: 'dice', title: 'Dice', moduleId: PLATFORM.moduleName('./routes/dice') },
+      { route: 'dice', name: 'dice', title: 'Dice', moduleId: PLATFORM.moduleName('./routes/dice/dice') },
       { route: 'blackjack', name: 'blackjack', title: 'Dice', moduleId: PLATFORM.moduleName('./routes/blackjack') },
       { route: 'slots', name: 'slots', title: 'Dice', moduleId: PLATFORM.moduleName('./routes/slots') },
 
