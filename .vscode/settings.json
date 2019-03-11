@@ -2,5 +2,14 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
   "html.suggest.angular1": false,
-  "html.suggest.ionic": false
+  "html.suggest.ionic": false,
+  "emmet.includeLanguages":{
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  }
 }
