@@ -4,10 +4,10 @@ import {Aurelia} from 'aurelia-framework'
 import environment from './environment';
 import {PLATFORM} from 'aurelia-pal';
 
-import '!style-loader!css-loader!./styles/global.css';
-
 import 'materialize-css';
 import '!style-loader!css-loader!materialize-css/dist/css/materialize.css';
+
+import '!style-loader!css-loader!./styles/global.css';
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
