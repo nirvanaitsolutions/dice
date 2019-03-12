@@ -1,0 +1,29 @@
+.status {
+    display: block;
+    margin: 10px 0;
+}
+
+.status a {
+    color: #FFF;
+}
+
+.meta ul {
+    align-items: center;
+    display: flex;
+}
+
+.meta li {
+    font-weight: bold;
+    line-height: 1;
+    margin-right: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 52px;
+    width: 52px;
+}

@@ -1,8 +1,12 @@
 <template>
+    <require from="./status"></require>
+    
     <div class="app-menu">
         <header>
             <h1 class="heading logo">SwapSteem Gaming</h1>
         </header>
+
+        <status></status>
             
         <ul>
             <li repeat.for="row of router.navigation" class="nav-item ${row.isActive ? 'active' : ''}">

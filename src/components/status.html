@@ -1,3 +1,26 @@
 <template>
-    
+    <div class="status">
+        <div class="links">
+            <a href="#" click.delegate="login()" if.bind="!loggedInUser">Login</a>
+            <a href="#" click.delegate="logout()" else>Logout</a>
+        </div>
+        <div class="meta" if.bind="loggedInUser">
+            <ul>
+                <li><img src="https://img.busy.org/@${loggedInUser.username}?size=50" class="avatar" alt="${loggedInUser.username}"></li>
+                <li>${balance.value} ${balance.unit}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="loginModal" md-modal md-modal.ref="modal" portal>
+        <div class="modal-content">
+            <h4>Login</h4>
+            <p>The Steem Keychain extension is required to use this app.</p>
+
+            <form>
+                <md-input type="text" value.bind="loginUsername" placeholder="Steem username"></md-input>
+                <a click.delegate="handleLogin()" md-button="flat: true;" md-waves="color: accent;">Login</a>
+            </form>
+        </div>
+    </div>
 </template>

@@ -1,33 +1,93 @@
-import { customElement } from 'aurelia-framework';
+import { customElement, computedFrom } from 'aurelia-framework';
+import { MdModal } from 'aurelia-materialize-bridge';
+
 import steem from 'steem';
+
+import styles from './status.css';
 
 @customElement('status')
 export class Status {
-    login(username) {
+    private styles = styles;
+    private loginUsername = localStorage.getItem('_dice_userNameCached') || null;
+    private loggedInUser = this.getUser();
+    private modal: MdModal;
+
+    @computedFrom('loggedInUser.balance')
+    get balance() {
+        if (this.loggedInUser) {
+            const balanceString = this.loggedInUser.balance.split(' ');
+
+            return {
+                value: parseFloat(balanceString[0]),
+                unit: balanceString[1]
+            };
+        }
+
+        return null;
+    }
+
+    getUser() {
+        const localUser = sessionStorage.getItem('_dice_user');
+
+        if (!localUser) {
+            return null;
+        }
+
+        return JSON.parse(localUser);
+    }
+
+    login() {
+        this.modal.open();
+    }
+
+    handleLogin() {
         if (!window.steem_keychain) {
             window.alert('Steem Keychain extension not installed');
 
             return;
         }
 
-        window.steem_keychain.requestSignBuffer(username, `dice_login-${Math.floor(100000000 + Math.random() * 900000000)}`, 'Posting', response => {
+        if (!this.loginUsername) {
+            return;
+        }
+
+        window.steem_keychain.requestSignBuffer(this.loginUsername, `dice_login-${Math.floor(100000000 + Math.random() * 900000000)}`, 'Posting', response => {
             if(response.success === true) {
                 const returnedUser = response.data.username;
+                const localUser: any = sessionStorage.getItem('_dice_user') ? JSON.parse(sessionStorage.getItem('_dice_user')) : null;
 
-                if (returnedUser == username) {
+                if (localUser && localUser.username === returnedUser) {
                   // User already logged in
+                  this.modal.close();
                   return;
                 }
 
-                const user = {
-                   username: response.data.username,
-                   type: 'keychain'
-                }
+                steem.api.getAccounts([returnedUser], (err, result) => {
+                    const userObject = result[0];
+                    const userMeta = JSON.parse(userObject.json_metadata);
 
-                // Save user
+                    const user = {
+                        username: response.data.username,
+                        userMeta,
+                        balance: userObject.balance,
+                        type: 'keychain'
+                    };
+
+                    this.loggedInUser = user;
+
+                    this.modal.close();
+
+                    sessionStorage.setItem('_dice_user', JSON.stringify(user));
+                    localStorage.setItem('_dice_userNameCached', response.data.username);
+                });
             } else {
               //  Verification failed
             }
         });
+    }
+
+    logout() {
+        sessionStorage.removeItem('_dice_user');
+        this.loggedInUser = null;
     }
 }
