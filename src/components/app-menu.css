@@ -23,3 +23,25 @@
     font-size: 24px;
     font-weight: bold;
 }
+
+.sidebar-nav {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+    .sidebar-nav li {
+        background: rgba(255, 255, 255, 0.4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+        text-align: center;
+    }
+
+    .sidebar-nav li:last-child {
+        border-bottom: none;
+    }
+
+    .sidebar-nav a {
+        color: #FFF;
+        display: block;
+        font-size: 18px;
+        padding: 15px;
+    }
