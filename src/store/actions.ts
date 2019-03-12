@@ -34,5 +34,14 @@ export async function logout(state: State): Promise<State> {
     return newState;
 }
 
+export async function setUserMeta(state: State, data: any): Promise<State> {
+    let newState = { ...state };
+
+    newState.user = data;
+
+    return newState;
+}
+
 store.registerAction('login', login);
 store.registerAction('logout', logout);
+store.registerAction('setUserMeta', setUserMeta);
