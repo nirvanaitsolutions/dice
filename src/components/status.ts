@@ -4,6 +4,8 @@ import { MdModal } from 'aurelia-materialize-bridge';
 import steem from 'steem';
 
 import styles from './status.css';
+import { dispatchify } from 'aurelia-store';
+import { login } from 'store/actions';
 
 @customElement('status')
 export class Status {
@@ -74,6 +76,8 @@ export class Status {
                     };
 
                     this.loggedInUser = user;
+
+                    dispatchify(login)(user);
 
                     this.modal.close();
 
