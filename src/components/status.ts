@@ -5,7 +5,7 @@ import steem from 'steem';
 
 import styles from './status.css';
 import { dispatchify } from 'aurelia-store';
-import { login } from 'store/actions';
+import { login, logout } from 'store/actions';
 
 @customElement('status')
 export class Status {
@@ -93,5 +93,6 @@ export class Status {
     logout() {
         sessionStorage.removeItem('_dice_user');
         this.loggedInUser = null;
+        dispatchify(logout)();
     }
 }
