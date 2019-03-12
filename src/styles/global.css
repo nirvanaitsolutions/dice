@@ -147,3 +147,20 @@ input[type=range] + .thumb {
 input[type=range] + .thumb.active .value {
     color: #FFF;
 }
+
+#loginModal,
+#loginModal .modal-footer {
+    background: #1E1E1E;
+}
+
+#loginModal .btn-flat {
+    background: rgba(131, 21, 228, 0.79);
+    color: #FFF;
+}
+
+#loginModal input[type="text"],
+#loginModal input[type="text"]:focus {
+    border-color: #FFF;
+    box-shadow-color: #FFF;
+    color: #FFF;
+}
