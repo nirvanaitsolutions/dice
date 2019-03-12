@@ -1209,7 +1209,7 @@ aurelia-cli@^1.0.0-beta.13:
     terser "^3.16.1"
     typescript "^1.0.0 || ^2.0.0 || ^3.0.0"
 
-aurelia-dependency-injection@^1.0.0, aurelia-dependency-injection@^1.4.1, aurelia-dependency-injection@^1.4.2:
+aurelia-dependency-injection@^1.0.0, aurelia-dependency-injection@^1.3.2, aurelia-dependency-injection@^1.4.1, aurelia-dependency-injection@^1.4.2:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/aurelia-dependency-injection/-/aurelia-dependency-injection-1.4.2.tgz#fa9d1a9f4931e353fb8f938ee0c54b9fbf3f341a"
   integrity sha512-NddvPLnKx6VQA70BXa1sfaLeEqwBfNrMaTYdHSS9kKD20lBwsXHWBZtRQPgRg9LF8g4yFKjxEgRA9Ja6SFregA==
@@ -1301,7 +1301,7 @@ aurelia-logging-console@^1.0.0:
   resolved "https://registry.yarnpkg.com/aurelia-logging-console/-/aurelia-logging-console-1.1.0.tgz#d43507ef14642ae8294bddd30b4b1c9f5e4bb677"
   integrity sha512-gv6Wf+xkHzv6izP6V9HquFUf0WNMUfhO6i5JkcZEBkSC2Jc3JM5Fkr0OPUwPu2M0FIG/90a5PNuEpvjjJamQ6Q==
 
-aurelia-logging@^1.0.0, aurelia-logging@^1.5.0, aurelia-logging@^1.5.1:
+aurelia-logging@^1.0.0, aurelia-logging@^1.3.1, aurelia-logging@^1.5.0, aurelia-logging@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/aurelia-logging/-/aurelia-logging-1.5.1.tgz#d9f2f3da8c10bc9385578c86ee49829d75c603c0"
   integrity sha512-HRycP+LrzAOsKN4bOQftP9aVztvVhsuvVZqHV9uuunK9peQCx38sTnC1mdC/qxoF+qFa7xVSVJh1xg8Whj1jrg==
@@ -1311,7 +1311,7 @@ aurelia-materialize-bridge@^1.2.8:
   resolved "https://registry.yarnpkg.com/aurelia-materialize-bridge/-/aurelia-materialize-bridge-1.2.8.tgz#c5ef991be3761d7377ff6f534e81533856afeffe"
   integrity sha512-TasL/mi1wRYnY+sMNIWCkZ/rVaHUpA+l6dH25tM5Epc/xfAJK79nYh6jEOJ+JZ6ih+OpuIDWH5FJcCubG2RgVA==
 
-aurelia-metadata@^1.0.0, aurelia-metadata@^1.0.2, aurelia-metadata@^1.0.4:
+aurelia-metadata@^1.0.0, aurelia-metadata@^1.0.2, aurelia-metadata@^1.0.3, aurelia-metadata@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/aurelia-metadata/-/aurelia-metadata-1.0.5.tgz#76a7e0f3f7aaec25627b2abd55678627556e59f0"
   integrity sha512-7/xrjDXSSiPlwcw8CDh4GvtvKldfyl4IGUl9uIPhHLaAtC/i3ctBdSYIaosATY/3L/Yurc8zH1aJEhF01shL9w==
@@ -1350,6 +1350,21 @@ aurelia-polyfills@^1.0.0, aurelia-polyfills@^1.3.0, aurelia-polyfills@^1.3.2:
   dependencies:
     aurelia-pal "^1.0.0"
 
+aurelia-portal-attribute@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/aurelia-portal-attribute/-/aurelia-portal-attribute-1.3.0.tgz#79be398e15b75f7ab1507979f34ee1e6f478e682"
+  integrity sha512-kKPmQoOaz8mDfUzKcSW5kXEmFvbxOBjl79tiaUn8jIg9ZOXwUWAUto3nG1ospEgC0SH2pEG0TON02FJIcrECaA==
+  dependencies:
+    aurelia-binding "^2.0.0"
+    aurelia-dependency-injection "^1.3.2"
+    aurelia-loader "^1.0.0"
+    aurelia-logging "^1.3.1"
+    aurelia-metadata "^1.0.3"
+    aurelia-pal "^1.4.0"
+    aurelia-path "^1.1.1"
+    aurelia-task-queue "^1.2.1"
+    aurelia-templating "^1.8.0"
+
 aurelia-route-recognizer@^1.2.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/aurelia-route-recognizer/-/aurelia-route-recognizer-1.3.1.tgz#530b1d0f0d800590521f224a4252cf031b7bd219"
@@ -1369,7 +1384,7 @@ aurelia-router@^1.5.0:
     aurelia-path "^1.0.0"
     aurelia-route-recognizer "^1.2.0"
 
-aurelia-task-queue@^1.0.0, aurelia-task-queue@^1.1.0, aurelia-task-queue@^1.3.1:
+aurelia-task-queue@^1.0.0, aurelia-task-queue@^1.1.0, aurelia-task-queue@^1.2.1, aurelia-task-queue@^1.3.1:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/aurelia-task-queue/-/aurelia-task-queue-1.3.2.tgz#afabb7e0c49734b368f36c5bbf2c275bebd4da5d"
   integrity sha512-4a3TLUP6rN2RG9bW9g2yM6G4cE70sWXqAV1OAoYDgv9QHmlXFP8V/DEJxVjdcmEQwmtenRN+uQA0AkDORpgHUg==

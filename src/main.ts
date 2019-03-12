@@ -15,6 +15,7 @@ export function configure(aurelia: Aurelia) {
     .feature(PLATFORM.moduleName('resources/index'));
 
   aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
+  aurelia.use.plugin(PLATFORM.moduleName('aurelia-portal-attribute'));
   aurelia.use.plugin(PLATFORM.moduleName('aurelia-materialize-bridge'), b => b.useAll());
 
   if (environment.debug) {
