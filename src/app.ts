@@ -1,8 +1,24 @@
 import { PLATFORM } from 'aurelia-pal';
 import { RouterConfiguration, Router } from 'aurelia-router';
+import { AuthorizeStep } from './resources/pipeline-steps/auth-pipeline';
+import { Store, dispatchify } from 'aurelia-store';
+import { State } from 'store/state';
+import { Subscription } from 'rxjs';
 
 export class App {
-  private router: Router;
+    private router: Router;
+    private state: State;
+    private subscription: Subscription;
+
+    constructor(private store: Store<State>) {
+        this.subscription = this.store.state.subscribe((state) => {
+            if (state) {
+                this.state = state;
+
+                AuthorizeStep.loggedIn = state.loggedIn;
+            }
+        });
+    }
 
     configureRouter(config: RouterConfiguration, router: Router) {
         config.title = 'SwapSteem';
