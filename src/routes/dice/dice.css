@@ -11,13 +11,12 @@
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 600;
-    color: #b0d4e9;
+    color: #FFF;
 }
 
 .text-box-wrapper {
     border-radius: 5px;
     padding: 5px;
-    margin-top: 10px;
     padding-bottom: 0px;
     position: relative;
 }
@@ -32,7 +31,7 @@
         appearance: none;
         background: none;
         border: none;
-        color: #398adf;
+        color: #FFF;
         cursor: pointer;
         height: 40px;
         font-size: 12px;
