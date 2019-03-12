@@ -1,6 +1,6 @@
 <template>
     <require from="./status"></require>
-    
+
     <div class="app-menu">
         <header>
             <h1 class="heading logo">SwapSteem Gaming</h1>
@@ -9,7 +9,7 @@
         <status></status>
             
         <ul>
-            <li repeat.for="row of router.navigation" class="nav-item ${row.isActive ? 'active' : ''}">
+            <li repeat.for="row of router.navigation | authFilter: state.loggedIn" class="nav-item ${row.isActive ? 'active' : ''}">
                 <a href.bind="row.href" class="navigation-link">${row.title}</a>
             </li>
         </ul>
