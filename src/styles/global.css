@@ -81,7 +81,7 @@ body {
 }
 
 .page-header {
-    background: #051F40;
+    background: rgba(255, 255, 255, 0.16);
     display: block;
     padding: 15px;
     order: -1;
