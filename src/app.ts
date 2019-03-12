@@ -4,7 +4,9 @@ import { AuthorizeStep } from './resources/pipeline-steps/auth-pipeline';
 import { Store, dispatchify } from 'aurelia-store';
 import { State } from 'store/state';
 import { Subscription } from 'rxjs';
+import { autoinject } from 'aurelia-framework';
 
+@autoinject()
 export class App {
     private router: Router;
     private state: State;
