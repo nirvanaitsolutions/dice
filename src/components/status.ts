@@ -30,19 +30,9 @@ export class Status {
                 value: parseFloat(balanceString[0]),
                 unit: balanceString[1]
             };
-        }
-
+            })
+        );
         return null;
-    }
-
-    getUser() {
-        const localUser = sessionStorage.getItem('_dice_user');
-
-        if (!localUser) {
-            return null;
-        }
-
-        return JSON.parse(localUser);
     }
 
     login() {

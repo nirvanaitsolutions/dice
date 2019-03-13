@@ -8,6 +8,18 @@ export interface UserInterface {
 }
 
 export class UserService {
+
+    private storageKeyUser = '_dice_user';
+
+    getUser() {
+        const localUser = sessionStorage.getItem(this.storageKeyUser);
+
+        if (!localUser) {
+            return null;
+        }
+
+        return JSON.parse(localUser);
+    }
     
     promptUserLogin(username: string): Promise<[UserInterface, any]> {
         return new Promise((resolve, reject) => {
@@ -16,7 +28,7 @@ export class UserService {
             steem_keychain.requestSignBuffer(username, loginChallenge, 'Posting', async (response) => {
                 if (response.success === true) {
                     const returnedUser = response.data.username;
-                    const localUser: any = sessionStorage.getItem('_dice_user') ? JSON.parse(sessionStorage.getItem('_dice_user')) : null;
+                    const localUser: any = sessionStorage.getItem(this.storageKeyUser) ? JSON.parse(sessionStorage.getItem(this.storageKeyUser)) : null;
     
                     if (localUser && localUser.username === returnedUser) {
                       return;
