@@ -5,34 +5,39 @@ import { MdModal } from 'aurelia-materialize-bridge';
 import steem from 'steem';
 
 import styles from './status.css';
-import { dispatchify } from 'aurelia-store';
+import { dispatchify, Store } from 'aurelia-store';
 import { login, logout, setUserMeta } from 'store/actions';
 import { Router } from 'aurelia-router';
+import { map } from 'rxjs/operators';
+import { State } from 'store/state';
 
 @autoinject()
 @customElement('status')
 export class Status {
     private styles = styles;
+    private state: State;
+    private balance;
+    private subscription;
     private loginUsername = localStorage.getItem('_dice_userNameCached') || null;
-    private loggedInUser = this.getUser();
     private modal: MdModal;
 
-    constructor(private router: Router, private userService: UserService) {
+    constructor(private router: Router, private userService: UserService, private store: Store<State>) {
 
     }
 
-    @computedFrom('loggedInUser.balance')
-    get balance() {
-        if (this.loggedInUser) {
-            const balanceString = this.loggedInUser.balance.split(' ');
+    bind() {
+        this.subscription = this.store.state.subscribe((state: State) => this.state = state);
+        
+        this.balance = this.store.state.pipe(
+            map(s => {
+                const balanceString = s.user.balance.split(' ');
 
-            return {
-                value: parseFloat(balanceString[0]),
-                unit: balanceString[1]
-            };
+                return {
+                    value: parseFloat(balanceString[0]),
+                    unit: balanceString[1]
+                };
             })
         );
-        return null;
     }
 
     login() {
@@ -55,7 +60,7 @@ export class Status {
             const user = response[0];
             const steemData = response[1];
 
-            this.loggedInUser = user;
+            console.log(response);
 
             dispatchify(login)(user);
             dispatchify(setUserMeta)(steemData);
@@ -71,7 +76,6 @@ export class Status {
 
     logout() {
         sessionStorage.removeItem('_dice_user');
-        this.loggedInUser = null;
         dispatchify(logout)();
         this.router.navigate('/');
     }
