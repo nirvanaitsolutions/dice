@@ -25,6 +25,7 @@ export function configure(aurelia: Aurelia) {
     });
 
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-animator-css'));
+    aurelia.use.plugin(PLATFORM.moduleName('aurelia-async-binding'));
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-portal-attribute'));
     aurelia.use.plugin(PLATFORM.moduleName('aurelia-materialize-bridge'), b => b.useAll());
 
