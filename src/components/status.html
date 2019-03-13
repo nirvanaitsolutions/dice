@@ -1,13 +1,13 @@
 <template>
     <div class="status">
         <div class="links">
-            <a href="#" click.delegate="login()" if.bind="!loggedInUser">Login</a>
+            <a href="#" click.delegate="login()" if.bind="!state.loggedIn">Login</a>
             <a href="#" click.delegate="logout()" else>Logout</a>
         </div>
-        <div class="meta" if.bind="loggedInUser">
+        <div class="meta" if.bind="state.loggedIn">
             <ul>
-                <li><img src="https://img.busy.org/@${loggedInUser.username}?size=50" class="avatar" alt="${loggedInUser.username}"></li>
-                <li>${balance.value} ${balance.unit}</li>
+                <li><img src="https://img.busy.org/@${state.user.name}?size=50" class="avatar" alt="${state.user.name}"></li>
+                <li>${balance & async: { property: 'value' }} ${balance & async: { property: 'unit' }}</li>
             </ul>
         </div>
     </div>
