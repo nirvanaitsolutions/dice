@@ -150,7 +150,8 @@ input[type=range] + .thumb.active .value {
 
 #loginModal,
 #loginModal .modal-footer {
-    background: #1E1E1E;
+    background-color: #292829;
+    background-image: linear-gradient(0deg, #292829 0%, #1e1e1e 100%);
 }
 
 #loginModal .btn-flat {
