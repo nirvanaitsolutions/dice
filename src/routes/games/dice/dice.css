@@ -1,0 +1,63 @@
+.bet-div {
+    padding: 16px;
+}
+
+.bet-amount-how-to-play {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bet-amount-span {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #FFF;
+}
+
+.multipliers {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        border: 1px solid rgba(255, 255, 255, 0.46);
+        height: 100%;
+    }
+}
+
+.bet-amount-input {
+    align-items: center;
+    display: flex;
+
+    md-input {
+        flex: 1;
+
+        & > div {
+            margin: 0;
+        }
+    }
+}
+
+.bet-slider {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .bet-slider a {
+        background: rgba(131, 21, 228, 0.79);
+        color: #FFF;
+        margin-right: 10px;
+
+        &:last-child {
+            margin-left: 10px;
+            margin-right: 0;
+        }
+    }
+
+    .bet-slider .selected {
+        background: rgba(208, 37, 201, 0.79);
+    }
+
+    .bet-slider md-range {
+        flex: 1;
+    }

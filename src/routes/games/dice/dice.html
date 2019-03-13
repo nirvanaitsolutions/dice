@@ -1,0 +1,34 @@
+<template>
+    <div class="page__content">
+        <header class="page-header">
+            <h1 class="heading">Dice</h1>
+        </header>
+
+        <div class="bet-div">
+            <div class="bet-amount-how-to-play">
+                <span class="bet-amount-span"> Bet amount </span>
+                <span class="how-to-play-span"> How To Play </span>
+            </div>
+
+            <div class="bet-amount-input">
+                <md-input type="number" value.bind="minimumBet"></md-input>
+
+                <div class="multipliers">
+                    <a click.delegate="betMultiplier('1/2')" class="${multiplier == '1/2' ? 'selected' : ''}" md-button="flat: true;" md-waves="color: accent;">1/2</a>
+                    <a click.delegate="betMultiplier('2')" class="${multiplier == '2' ? 'selected' : ''}" md-button="flat: true;" md-waves="color: accent;">2X</a>
+                    <a click.delegate="betMultiplier('MAX')" class="${multiplier == 'MAX' ? 'selected' : ''}" md-button="flat: true;" md-waves="color: accent;">MAX</a>
+                </div>
+            </div>
+
+            <div class="text-box-wrapper">
+                ${winPercentage}%
+            </div>
+
+            <div class="bet-slider">
+                <a click.delegate="changeDirection('under')" class="${direction == 'under' ? 'selected' : ''}" md-button="flat: true;" md-waves="color: accent;">Under <</a>
+                <md-range value.bind="sliderValue" min.bind="sliderMinValue" max.bind="sliderMaxValue" step="1"></md-range>
+                <a click.delegate="changeDirection('over')" class="${direction == 'over' ? 'selected' : ''}" md-button="flat: true;" md-waves="color: accent;">Over ></a>
+            </div>
+        </div>
+    </div>
+</template>

@@ -34,7 +34,7 @@ const load = {
       loader: 'postcss-loader',
       options: { plugins: loadPostCssPlugins }
     }
-  };
+};
 
 function loadPostCssPlugins() {
     return [
@@ -56,7 +56,7 @@ function loadPostCssPlugins() {
       require('lost'),
       require('autoprefixer')({ browsers: ['last 2 versions'] })
     ];
-  }
+}
 
 module.exports = ({ production, server, extractCss, coverage, analyze, karma } = {}) => ({
   resolve: {
