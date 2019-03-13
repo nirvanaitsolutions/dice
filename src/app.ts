@@ -1,10 +1,12 @@
+import { UserService } from './services/user';
 import { PLATFORM } from 'aurelia-pal';
 import { RouterConfiguration, Router } from 'aurelia-router';
 import { AuthorizeStep } from './resources/pipeline-steps/auth-pipeline';
-import { Store, dispatchify } from 'aurelia-store';
+import { Store, dispatchify, rehydrateFromLocalStorage } from 'aurelia-store';
 import { State } from 'store/state';
 import { Subscription } from 'rxjs';
 import { autoinject } from 'aurelia-framework';
+import { login } from 'store/actions';
 
 @autoinject()
 export class App {
@@ -20,6 +22,11 @@ export class App {
                 AuthorizeStep.loggedIn = state.loggedIn;
             }
         });
+    }
+
+    // On initial load, rehydrate store from cache middleware
+    attached() {
+        dispatchify(rehydrateFromLocalStorage)('steemswap_gaming');
     }
 
     configureRouter(config: RouterConfiguration, router: Router) {
